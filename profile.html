@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> APPLICATION </title>
+			<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/style.css">
+    </head>
+	<body onload="select()">
+		
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: black">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Schedule</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="submit.html">Home
+                
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="fillUp.html">Sign-up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examsched.html">Create Schedule</a>
+            </li>
+        
+           <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+		</div>
+		<br><br>
+		<form class="container" name ="fillup" id="needs-validation" novalidate >
+			<div class="row">
+			 <div class="col-md-4 mb-5">
+			  <label  for="validationCustom01">First name:</label>
+			   <select onchange="select()" id="validationCustom01" class ="form-control" name="name">
+                 <script>
+				for(var i = 0; i<localStorage.length; i++){
+                
+                    if (Object.keys(JSON.parse(localStorage.getItem(localStorage.key(i)))).length==4)
+                    document.write("<option>"+ localStorage.key(i) +"</option>");
+                    
+                    
+								}
+							</script>
+                 
+                 </select>
+		</div>
+			<div class="col-md-4 mb-5">
+				<label for="validationCustom02">Last name:</label>
+				 <input name="last" type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="" required>
+			</div>
+		</div>
+			<div class="row">
+				<div class="col-md-4 mb-5">
+				 <label for="validationCustom03">Name of school:</label>
+				  <input name="school" type="text" class="form-control" id="validationCustom03" placeholder="Name of School" required>
+				   <div class="invalid-feedback">
+					Please provide a valid school name.
+			</div>
+		</div>
+			<div class="col-md-4 mb-5">
+				<label for="validationCustom04">Address:</label>
+				 <input name="address" type="text" class="form-control" id="validationCustom04" placeholder="address" required>
+				  <div class="invalid-feedback">
+					Please provide a valid address.
+			</div>
+		</div>
+			<div class="col-md-4 mb-5">
+				<label for="validationCustom05">School ID:</label>
+					<input name="schoolid"type="text" class="form-control" id="validationCustom05" placeholder="School ID" required>
+						<div class="invalid-feedback">
+							Please provide a valid School ID.
+				</div>
+			</div>
+		</div>
+
+		<br>
+			<a href="submit.html" class="btn btn-secondary btn-lg active">Menu</a>
+		<br>
+	</form>
+	<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+
+  window.addEventListener('load', function() {
+    var form = document.getElementById('needs-validation');
+    form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  }, false);
+})();
+</script>
+<script src="js/localstorage.js"></script>
+        <script src="bootstrap/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        
+</body>
+</html>

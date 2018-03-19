@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> APPLICATION </title>
+			<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/style.css">
+			
+    </head>
+	<body onload="doShowAll()">
+	
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: black">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Schedule</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+           <li class="nav-item ">
+              <a class="nav-link" href="submit.html">Home
+                
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fillUp.html">Sign-up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examsched.html">Create Schedule</a>
+            </li>
+         
+           <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+		</div>
+		<br>
+		
+	<center><br>
+	<h1> Just input your exam Schedule </h1><br>
+		<form class="container" name ="sched" id="needs-validation" novalidate>
+			<div class="row">
+			 <div class="col-md-4 mb-3">
+			  <label for="validationCustom01">Subject:</label>
+			   <input type="text" name="sub" class="form-control" id="validationCustom01" placeholder="Input Subject" value="" required>
+		</div>
+			<div class="col-md-4 mb-3">
+				<label for="validationCustom02">Professor:</label>
+				 <input type="text" name="prof" class="form-control" id="validationCustom02" placeholder="Input Professor Name" value="" required>
+			</div>
+			<div class="col-md-4 mb-2">
+				<label for="validationCustom02">Room:</label>
+				 <input type="text" name="room" class="form-control" id="validationCustom02" placeholder="Input Room #" value="" required>
+			</div>
+		</div> 
+
+    <p><br>
+      <label for="time">Date and Time:</label>
+      <input name="time" type="datetime-local" id="time">
+    </p>
+    <center><a href="examsched.html"><button type="button" class="btn btn-primary" onclick="savesched()">Save Schedule</button></a>
+        </center>
+        </form>
+		</center>
+        <br><br><br>
+         <center>
+        <div id="items_table">
+			<h2>List Of Schedule</h2><br>    
+			<table id=list></table>
+			<p><br>
+				<label><input type=button value="Clear" onclick="ClearAll()">
+					<i>* Remove all Schedule</i></label>
+			</p>
+		</div>
+        </center>
+        <script src="js/localstorage.js"></script>
+        <br><br>
+       <script src="js/localstorage.js"></script>
+        <script src="bootstrap/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
